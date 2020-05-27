@@ -116,10 +116,8 @@ function resize() {
 function step() {
 
   context.clearRect(0, 0, width, height);
-
   update();
   render();
-
   requestAnimationFrame(step);
 
 }
@@ -170,7 +168,6 @@ function render() {
     if (Math.abs(tailY) < 0.1) tailY = 0.5;
 
     context.lineTo(star.x + tailX, star.y + tailY);
-
     context.stroke();
 
   });
@@ -197,7 +194,6 @@ function movePointer(x, y) {
 function onMouseMove(event) {
 
   touchInput = false;
-
   movePointer(event.clientX, event.clientY);
 
 }
@@ -205,16 +201,12 @@ function onMouseMove(event) {
 function onTouchMove(event) {
 
   touchInput = true;
-
   movePointer(event.touches[0].clientX, event.touches[0].clientY, true);
-
   event.preventDefault();
 
 }
 
 function onMouseLeave() {
-
   pointerX = null;
   pointerY = null;
-
 }
